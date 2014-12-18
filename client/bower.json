@@ -1,0 +1,21 @@
+{
+  "name": "client",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mxrguspxrt/nodejs_and_angular_testing",
+  "authors": [
+    "Margus Pärt <margus@wave.ee>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.7",
+    "bootstrap": "~3.3.1",
+    "underscore": "~1.7.0"
+  }
+}
