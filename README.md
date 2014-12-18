@@ -1,7 +1,8 @@
-Installation steps:
+Installation steps
+------------------
 
-
-Visit http://nodejs.org/ and Install NodeJS
+Visit http://nodejs.org/ and install NodeJS
+Visit http://www.mongodb.org/, install MongoDB and run it
 npm install -g express
 npm install -g express-generator
 
@@ -11,8 +12,12 @@ cd api && npm install
 DEBUG=api ./bin/www # RUN APP
 
 
+
+
 Used materials
+--------------
 
 1. http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/
-
-
+2. https://devcenter.heroku.com/articles/nodejs-mongoose
+3. https://github.com/hboylan/express-mongoose-api-seed
+... (+ documentations of NodeJS, Express, Mongoose etc)

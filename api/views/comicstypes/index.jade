@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+
+  h2 Your comics
+
+  if comicstypes.length
+    each comicstype in comicstypes
+      p #{comicstype.name}
+  else
+    p You have no comics yet
+
+
+
+  h2 Add a new comics
+
+  form(action="/comicstypes",method="post")
+    p
+      label Name
+      input(name="name")
+
+    p
+      label URL
+      input(name="url")
+
+    p
+      input(type='submit',value='Save')
