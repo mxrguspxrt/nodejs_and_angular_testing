@@ -21,4 +21,5 @@ Used materials
 2. https://devcenter.heroku.com/articles/nodejs-mongoose
 3. https://github.com/hboylan/express-mongoose-api-seed
 4. http://my.safaribooksonline.com/book/programming/javascript/9780133962369
+5. http://scotch.io/tutorials/javascript/angularjs-best-practices-directory-structure
 ... (+ documentations of NodeJS, Express, Mongoose etc)
