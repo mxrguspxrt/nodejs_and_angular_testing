@@ -20,4 +20,5 @@ Used materials
 1. http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/
 2. https://devcenter.heroku.com/articles/nodejs-mongoose
 3. https://github.com/hboylan/express-mongoose-api-seed
+4. http://my.safaribooksonline.com/book/programming/javascript/9780133962369
 ... (+ documentations of NodeJS, Express, Mongoose etc)
