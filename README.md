@@ -25,3 +25,12 @@ Used materials
 6. http://www.sitepoint.com/creating-crud-app-minutes-angulars-resource/
 7. http://blog.kevinblanco.io/creating-a-simple-crud-with-node-js-express-mongodb-and-angularjs-part-1/
 ... (+ documentations of NodeJS, Express, Mongoose etc)
+
+
+
+Time spent
+----------
+
+18.12 - 6h
+19.12 - 6h
+21.12 - 6h
