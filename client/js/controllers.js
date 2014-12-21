@@ -17,23 +17,23 @@ AppControllers.controller('PhonesShowController', ['$scope', '$routeParams', 'Ph
 }]);
 
 AppControllers.controller('ComicimagesIndexController', ['$scope', '$routeParams', 'Comicimage', function($scope, $routeParams, Comicimage) {
+
   $scope.comicimages = Comicimage.query({date: $routeParams.date});
+
+  var dateFormat = "YYYY-MM-DD";
+  var today = moment();
+  var currentDate = $routeParams.date == "today" ? moment() : moment($routeParams.date, dateFormat);
+  var previousDate = moment(currentDate).subtract(1, "day");
+  var nextDate = moment(currentDate).add(1, "day");
+
+  alert(currentDate);
+  alert(previousDate);
+
+  $scope.currentDateString = currentDate.format(dateFormat);
+  $scope.previousDateString = previousDate.format(dateFormat);
+  if (nextDate <= today) {
+    $scope.nextDateString = nextDate.format(dateFormat);
+  }
+
 }]);
 
-// var phonecatControllers = angular.module('phonecatControllers', []);
-
-// phonecatControllers.controller('PhoneListCtrl', ['$scope', '$http',
-//   function ($scope, $http) {
-//     $http.get('phones/phones.json').success(function(data) {
-//       $scope.phones = data;
-//     });
-
-//     $scope.orderProp = 'age';
-//   }]);
-
-// phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$http',
-//   function($scope, $routeParams, $http) {
-//     $http.get('phones/' + $routeParams.phoneId + '.json').success(function(data) {
-//       $scope.phone = data;
-//     });
-//   }]);

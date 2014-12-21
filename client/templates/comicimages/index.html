@@ -1,14 +1,22 @@
 <div class="container-fluid">
+
   <div class="row">
-    <div class="col-md-12">
-      <!--Body content-->
-
-      <ul class="comicimages">
-        <li ng-repeat="comicimage in comicimages" class="comicimage">
-          <img ng-src="{{comicimage.url}}">
-        </li>
-      </ul>
-
+    <div class="col-md-12 text-center">
+      <h1>Comics for {{currentDateString}}</h1>
+      <div ng-repeat="comicimage in comicimages" class="comicimage">
+        <img ng-src="{{comicimage.url}}" class="img-responsive col-centered">
+      </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="text-center">
+        <a ng-if="previousDateString" ng-href="/#/images/{{previousDateString}}"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a>
+        |
+        <a ng-if="nextDateString" ng-href="/#/images/{{nextDateString}}">Next<i class="glyphicon glyphicon-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>
+
 </div>

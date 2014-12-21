@@ -1,5 +1,6 @@
 var App = angular.module('App', [
   'ngRoute',
+  'angularMoment',
   'AppControllers',
   'AppFilters',
   'AppServices'
