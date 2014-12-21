@@ -8,7 +8,8 @@ var extractResponseFields = function(comicsimage) {
   return {
     id: comicsimage["_id"],
     date: comicsimage["date"],
-    url: comicsimage["url"]
+    url: comicsimage["url"],
+    type_name: comicsimage["type_name"]
   };
 };
 
@@ -29,6 +30,7 @@ router.get('/', function(req, res) {
     var comicsimages = comicstypes.map(function(comicstype) {
       return {
         _id: comicstype._id,
+        type_name: comicstype.name,
         date: date,
         url: comicstype.url.replace("%YYYY", ymd[0]).replace("%MM", ymd[1]).replace("%DD", ymd[2])
       };
