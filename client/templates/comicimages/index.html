@@ -2,7 +2,7 @@
 
   <div class="row">
     <div class="col-md-12 text-center">
-      <h1>Comics for {{currentDateString}}</h1>
+      <h3>Comics for {{currentDateString}}</h3>
       <div ng-repeat="comicimage in comicimages" class="comicimage">
         <img ng-src="{{comicimage.url}}" class="img-responsive col-centered">
       </div>
@@ -13,7 +13,6 @@
     <div class="col-md-12">
       <div class="text-center">
         <a ng-if="previousDateString" ng-href="/#/images/{{previousDateString}}"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a>
-        |
         <a ng-if="nextDateString" ng-href="/#/images/{{nextDateString}}">Next<i class="glyphicon glyphicon-chevron-right"></i></a>
       </div>
     </div>
