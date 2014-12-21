@@ -16,6 +16,10 @@ AppControllers.controller('PhonesShowController', ['$scope', '$routeParams', 'Ph
   }
 }]);
 
+AppControllers.controller('ComicimagesIndexController', ['$scope', '$routeParams', 'Comicimage', function($scope, $routeParams, Comicimage) {
+  $scope.comicimages = Comicimage.query({date: $routeParams.date});
+}]);
+
 // var phonecatControllers = angular.module('phonecatControllers', []);
 
 // phonecatControllers.controller('PhoneListCtrl', ['$scope', '$http',

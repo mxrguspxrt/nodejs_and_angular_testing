@@ -17,8 +17,12 @@ App.config(['$routeProvider',
         templateUrl: 'templates/phones/show.html',
         controller: 'PhonesShowController'
       }).
+      when("/images/:date", {
+        templateUrl: "templates/comicimages/index.html",
+        controller: "ComicimagesIndexController"
+      }).
       otherwise({
-        redirectTo: '/phones'
+        redirectTo: '/images/today'
       });
   }
 ]);
