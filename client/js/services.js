@@ -1,7 +1,7 @@
 var AppServices = angular.module('AppServices', ['ngResource']);
 
-AppServices.factory('Comicimage', function($resource) {
-  return $resource('/api/comicimages/:id');
+AppServices.factory('Comicsimage', function($resource) {
+  return $resource('/api/comicsimages/:id');
 });
 
 AppServices.factory('Comicstype', function($resource) {

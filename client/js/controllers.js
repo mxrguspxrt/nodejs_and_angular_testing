@@ -3,8 +3,6 @@ var AppControllers = angular.module('AppControllers', []);
 
 AppControllers.controller('ComicsimagesIndexController', ['$routeParams', 'Comicsimage', function($routeParams, Comicsimage) {
 
-  this.comicsimages = Comicsimage.query({date: $routeParams.date});
-
   var dateFormat = "YYYY-MM-DD";
   var today = moment();
   var currentDate = $routeParams.date == "today" ? moment() : moment($routeParams.date, dateFormat);
@@ -16,6 +14,8 @@ AppControllers.controller('ComicsimagesIndexController', ['$routeParams', 'Comic
   if (nextDate <= today) {
     this.nextDateString = nextDate.format(dateFormat);
   }
+
+  this.comicsimages = Comicsimage.query({date: this.currentDateString});
 
 }]);
 
