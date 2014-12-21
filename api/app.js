@@ -22,9 +22,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-app.use('/', require('./routes/index'));
-app.use('/comicstypes', require('./routes/comicstypes'));
 
+app.use('/api/comicstypes', require('./routes/comicstypes'));
 
 // init database
 mongoose.connect("mongodb://localhost/comics");

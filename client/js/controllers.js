@@ -1,9 +1,9 @@
 var AppControllers = angular.module('AppControllers', []);
 
 
-AppControllers.controller('ComicimagesIndexController', ['$routeParams', 'Comicimage', function($routeParams, Comicimage) {
+AppControllers.controller('ComicsimagesIndexController', ['$routeParams', 'Comicsimage', function($routeParams, Comicsimage) {
 
-  this.comicimages = Comicimage.query({date: $routeParams.date});
+  this.comicsimages = Comicsimage.query({date: $routeParams.date});
 
   var dateFormat = "YYYY-MM-DD";
   var today = moment();
@@ -20,9 +20,25 @@ AppControllers.controller('ComicimagesIndexController', ['$routeParams', 'Comici
 }]);
 
 
-AppControllers.controller('ComictypesIndexController', ['$routeParams', 'Comictype', function($routeParams, Comictype) {
+AppControllers.controller('ComicstypesIndexController', ['$routeParams', 'Comicstype', function($routeParams, Comicstype) {
 
-  this.comictypes = Comictype.query();
+  var self = this;
+
+  this.comicstypes = Comicstype.query();
+  this.newComicstype = new Comicstype();
+
+  this.save = function(newComicstype) {
+    this.comicstypes.push(newComicstype);
+    newComicstype.$save();
+    self.newComicstype = new Comicstype();
+  }
+
+  this.delete = function(comicstype) {
+    var index = this.comicstypes.indexOf(comicstype);
+    this.comicstypes.splice(index, 1);
+
+    Comicstype.delete({id: comicstype.id});
+  }
 
 }]);
 

@@ -22,4 +22,6 @@ Used materials
 3. https://github.com/hboylan/express-mongoose-api-seed
 4. http://my.safaribooksonline.com/book/programming/javascript/9780133962369
 5. http://scotch.io/tutorials/javascript/angularjs-best-practices-directory-structure
+6. http://www.sitepoint.com/creating-crud-app-minutes-angulars-resource/
+7. http://blog.kevinblanco.io/creating-a-simple-crud-with-node-js-express-mongodb-and-angularjs-part-1/
 ... (+ documentations of NodeJS, Express, Mongoose etc)

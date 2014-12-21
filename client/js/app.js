@@ -11,13 +11,13 @@ App.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when("/images/:date", {
-        templateUrl: "templates/comicimages/index.html",
-        controller: "ComicimagesIndexController",
+        templateUrl: "templates/comicsimages/index.html",
+        controller: "ComicsimagesIndexController",
         controllerAs: "self"
       }).
       when("/settings", {
-        templateUrl: "templates/comictypes/index.html",
-        controller: "ComictypesIndexController",
+        templateUrl: "templates/comicstypes/index.html",
+        controller: "ComicstypesIndexController",
         controllerAs: "self"
       }).
       otherwise({
