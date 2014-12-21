@@ -12,7 +12,8 @@ App.config(['$routeProvider',
     $routeProvider.
       when("/images/:date", {
         templateUrl: "templates/comicimages/index.html",
-        controller: "ComicimagesIndexController"
+        controller: "ComicimagesIndexController",
+        controllerAs: "self"
       }).
       otherwise({
         redirectTo: '/images/today'
