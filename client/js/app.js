@@ -15,6 +15,11 @@ App.config(['$routeProvider',
         controller: "ComicimagesIndexController",
         controllerAs: "self"
       }).
+      when("/settings", {
+        templateUrl: "templates/comictypes/index.html",
+        controller: "ComictypesIndexController",
+        controllerAs: "self"
+      }).
       otherwise({
         redirectTo: '/images/today'
       });

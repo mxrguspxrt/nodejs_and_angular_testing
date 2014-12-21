@@ -19,3 +19,10 @@ AppControllers.controller('ComicimagesIndexController', ['$routeParams', 'Comici
 
 }]);
 
+
+AppControllers.controller('ComictypesIndexController', ['$routeParams', 'Comictype', function($routeParams, Comictype) {
+
+  this.comictypes = Comictype.query();
+
+}]);
+
