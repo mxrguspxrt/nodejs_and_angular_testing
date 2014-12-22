@@ -9,10 +9,36 @@ var ComicsimageSchema = mongoose.Schema({
 });
 
 ComicsimageSchema.statics.loadFor = function(ymd, comicstypes) {
+
   var comicsimagesPromises = comicstypes.map(function(comicstype) {
     return comicstype.getComicsimage(ymd);
   });
-  return Promise.all(comicsimagesPromises);
+
+  return new Promise(function(resolve, reject) {
+    var images = [];
+    var loadCount = 0;
+
+    var checkIfDone = function() {
+      if (loadCount == comicsimagesPromises.length) {
+        resolve(images);
+      }
+    }
+
+    var whenLoaded = function(comicsimage) {
+      images.push(comicsimage);
+      loadCount++;
+      checkIfDone();
+    };
+
+    var whenFailed = function(error) {
+      loadCount++;
+      checkIfDone();
+    };
+
+    comicsimagesPromises.map(function(comicsimagePromise) {
+      comicsimagePromise.then(whenLoaded, whenFailed);
+    });
+  });
 };
 
 var Comicsimage = mongoose.model("Comicsimage", ComicsimageSchema);

@@ -13,6 +13,12 @@
 
   <div class="row">
     <div class="col-md-12">
+      <div ng-if="self.comicsimages.$resolved==false">
+        Loading...
+      </div>
+      <div ng-if="!self.comicsimages.length && self.comicsimages.$resolved==true">
+        No comics images found
+      </div>
       <div ng-repeat="comicsimage in self.comicsimages" class="comicsimage">
         <h4>{{comicsimage.typeName}}</h4>
         <img ng-src="{{comicsimage.filePath}}" class="img-responsive">
