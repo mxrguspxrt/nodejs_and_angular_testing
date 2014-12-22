@@ -7,13 +7,16 @@ var Comicstype = require("../models/comicstype");
 var extractResponseFields = function(comicsimage) {
   return {
     id: comicsimage["_id"],
-    date: comicsimage["date"],
-    url: comicsimage["url"],
-    type_name: comicsimage["type_name"]
+    day: comicsimage["day"],
+    typeId: comicsimage["typeId"],
+    typeName: comicsimage["typeName"],
+    filePath: "/api/files/"+comicsimage["fileId"]
   };
 };
 
 router.get('/', function(req, res) {
+  Comicsimage.remove({}, function() {});
+
   var date = req.query.date;
   if (!date) {
     return res.json([]);
@@ -22,21 +25,19 @@ router.get('/', function(req, res) {
   var ymd = date.split("-");
 
   Comicstype.find({}, function(err, comicstypes) {
-    if (err) {
-      console.log("got error", err);
-      return res.status(500).send("");
+
+    var onComicsimagesLoad = function(comicsimages) {
+      console.log("Comicsimages loaded", comicsimages);
+      return res.json(comicsimages.map(extractResponseFields));
     }
 
-    var comicsimages = comicstypes.map(function(comicstype) {
-      return {
-        _id: comicstype._id,
-        type_name: comicstype.name,
-        date: date,
-        url: comicstype.url.replace("%YYYY", ymd[0]).replace("%MM", ymd[1]).replace("%DD", ymd[2])
-      };
-    });
+    var onComicsimagesLoadFail = function(error) {
+      console.log("Comicsimages not loaded", error);
+      return res.status(500).json({error: "Problem loading images"});
+    }
 
-    return res.json(comicsimages.map(extractResponseFields));
+    Comicsimage.loadFor(ymd, comicstypes).then(onComicsimagesLoad, onComicsimagesLoadFail);
+
   });
 
 });

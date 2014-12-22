@@ -5,6 +5,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var Grid = require("gridfs-stream");
 
 var app = express();
 
@@ -20,21 +21,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
-
 app.use('/api/comicstypes', require('./routes/comicstypes'));
 app.use('/api/comicsimages', require('./routes/comicsimages'));
+app.use('/api/files', require('./routes/files'));
 
 // init database
 mongoose.connect("mongodb://localhost/comics");
-
 var db = mongoose.connection;
+db.safe = true;
+
+
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function callback () {
+db.once('open', function() {
   console.log('Mongoose connection opened');
   db["comicstype"] = require("./models/comicstype");
   db["comicsimage"] = require("./models/comicsimage");
+  Grid.current = Grid(db.db, mongoose.mongo);
 });
 
 
