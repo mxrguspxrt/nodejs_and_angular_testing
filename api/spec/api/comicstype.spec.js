@@ -2,7 +2,7 @@ var request = require('supertest');
 var should = require("should");
 var app = require("../../app");
 var Comicstype = require("../../models/comicstype");
-require("./cleardatabase");
+require("../support/cleardatabase");
 
 describe("/api/comicstypes", function() {
 
