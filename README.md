@@ -21,6 +21,11 @@ Running server
 ntpm start # to run server
 
 
+Known problems
+--------------
+
+Most of the tests are missing (wrote few REST tests for starters)
+
 
 Used materials
 --------------
@@ -37,7 +42,6 @@ Used materials
 10. http://www.clock.co.uk/blog/tools-for-unit-testing-and-quality-assurance-in-node-js
 11. http://www.hacksparrow.com/running-express-js-in-production-mode.html
 ... (+ documentations of NodeJS, Express, Mongoose etc)
-
 
 
 Time spent
