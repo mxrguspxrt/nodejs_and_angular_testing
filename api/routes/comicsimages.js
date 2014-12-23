@@ -6,11 +6,11 @@ var Comicstype = require("../models/comicstype");
 
 var extractResponseFields = function(comicsimage) {
   return {
-    id: comicsimage["_id"],
-    day: comicsimage["day"],
-    typeId: comicsimage["typeId"],
-    typeName: comicsimage["typeName"],
-    filePath: "/api/files/"+comicsimage["fileId"]
+    id: comicsimage._id,
+    day: comicsimage.day,
+    typeId: comicsimage.typeId,
+    typeName: comicsimage.typeName,
+    filePath: "/api/files/"+comicsimage.fileId
   };
 };
 

@@ -1,4 +1,4 @@
-var mongoose = require ("mongoose");
+var mongoose = require("mongoose");
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -27,16 +27,16 @@ app.use('/api/files', require('./routes/files'));
 
 // init database
 mongoose.connect("mongodb://localhost/comics");
-var db = mongoose.connection;
-db.safe = true;
+var connection = mongoose.connection;
+connection.safe = true;
 
 
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
+connection.on('error', console.error.bind(console, 'connection error:'));
+connection.once('open', function() {
   console.log('Mongoose connection opened');
-  db["comicstype"] = require("./models/comicstype");
-  db["comicsimage"] = require("./models/comicsimage");
-  Grid.current = Grid(db.db, mongoose.mongo);
+  connection.comicstype = require("./models/comicstype");
+  connection.comicsimage = require("./models/comicsimage");
+  Grid.current = Grid(connection.db, mongoose.mongo);
 });
 
 

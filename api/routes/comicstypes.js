@@ -5,9 +5,9 @@ var Comicstype = require("../models/comicstype");
 
 var extractResponseFields = function(comicstype) {
   return {
-    id: comicstype["_id"],
-    name: comicstype["name"],
-    url: comicstype["url"]
+    id: comicstype._id,
+    name: comicstype.name,
+    url: comicstype.url
   };
 }
 

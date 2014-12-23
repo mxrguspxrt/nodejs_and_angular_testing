@@ -16,5 +16,20 @@
     "mongoose": "3.8.21",
     "promise": "6.0.1",
     "gridfs-stream": "0.5.3"
+  },
+  "devDependencies": {
+    "jshint": "*",
+    "mocha": "*",
+    "istanbul": "*",
+    "should": "*",
+    "sinon": "*",
+    "nock": "*",
+    "supertest": "*",
+    "jshint": "*",
+    "jscs": "*",
+    "jshint-full-path": "*"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test ./node_modules/.bin/_mocha --recursive spec/**/*.spec.js"
   }
 }

@@ -3,8 +3,6 @@ Installation steps
 
 Visit http://nodejs.org/ and install NodeJS
 Visit http://www.mongodb.org/, install MongoDB and run it
-npm install -g express
-npm install -g express-generator
 
 git clone git@github.com:mxrguspxrt/nodejs_and_angular_testing.git
 cd nodejs_and_angular_testing
@@ -26,6 +24,8 @@ Used materials
 7. http://blog.kevinblanco.io/creating-a-simple-crud-with-node-js-express-mongodb-and-angularjs-part-1/
 8. https://www.promisejs.org/
 9. https://github.com/aheckmann/gridfs-stream
+10. http://www.clock.co.uk/blog/tools-for-unit-testing-and-quality-assurance-in-node-js
+11. http://www.hacksparrow.com/running-express-js-in-production-mode.html
 ... (+ documentations of NodeJS, Express, Mongoose etc)
 
 
