@@ -18,7 +18,7 @@ npm test
 Running server
 --------------
 
-ntpm start
+npm start
 
 
 Known problems
