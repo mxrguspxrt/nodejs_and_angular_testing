@@ -38,6 +38,8 @@ ComicsimageSchema.statics.loadFor = function(ymd, comicstypes) {
     comicsimagesPromises.map(function(comicsimagePromise) {
       comicsimagePromise.then(whenLoaded, whenFailed);
     });
+
+    checkIfDone(); // we might have no images
   });
 };
 

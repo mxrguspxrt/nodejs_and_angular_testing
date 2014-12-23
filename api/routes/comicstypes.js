@@ -26,6 +26,17 @@ router.post("/", function(req, res) {
 
 });
 
+router.put("/:id", function(req, res) {
+  Comicstype.findOne({_id: req.params.id}, function(err, comicstype) {
+    comicstype.name = req.body.name;
+    comicstype.url = req.body.url;
+
+    comicstype.save(function(err) {
+      res.json(extractResponseFields(comicstype));
+    });
+  });
+});
+
 router.delete("/:id", function(req, res) {
   Comicstype.find({_id: req.params.id}, function(err, comicstypes) {
     comicstypes.map(function(comicstype) {

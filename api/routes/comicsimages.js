@@ -15,7 +15,7 @@ var extractResponseFields = function(comicsimage) {
 };
 
 router.get('/', function(req, res) {
-  Comicsimage.remove({}, function() {});
+  //Comicsimage.remove({}, function() {});
 
   var date = req.query.date;
   if (!date) {

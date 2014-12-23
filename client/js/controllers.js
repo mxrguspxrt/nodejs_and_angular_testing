@@ -31,14 +31,27 @@ AppControllers.controller('ComicstypesIndexController', ['$routeParams', 'Comics
     this.comicstypes.push(newComicstype);
     newComicstype.$save();
     self.newComicstype = new Comicstype();
-  }
+  };
 
   this.delete = function(comicstype) {
+    Comicstype.delete({id: comicstype.id});
     var index = this.comicstypes.indexOf(comicstype);
     this.comicstypes.splice(index, 1);
-
-    Comicstype.delete({id: comicstype.id});
-  }
+  };
 
 }]);
 
+AppControllers.controller('ComicstypeController', ['$routeParams', 'Comicstype', function($routeParams, Comicstype) {
+
+  this.isInEditMode = false;
+
+  this.edit = function(comicstype) {
+    this.isInEditMode = true;
+  };
+
+  this.update = function(comicstype) {
+    comicstype.$update();
+    this.isInEditMode = false;
+  };
+
+}]);

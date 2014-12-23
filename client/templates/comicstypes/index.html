@@ -1,27 +1,54 @@
-<div class="container-fluid">
+<a href="/#/images">Images</a>
 
-  <a href="/#/images">Images</a>
+<h3>Sources</h3>
 
-  <h3>Settings</h3>
+<div ng-if="!self.comicstypes.length">
+  No sources defined.
+</div>
 
+<div ng-repeat="comicstype in self.comicstypes" ng-controller="ComicstypeController as item" class="comicstype">
   <div class="row">
-    <div class="col-md-12">
-      <div ng-repeat="comicstype in self.comicstypes" class="comicstype">
-        Name: {{comicstype.name}}<br />
-        Url: {{comicstype.url}}<br />
-        <button ng-click="self.delete(comicstype)">Delete</button>
+
+    <div ng-if="!item.isInEditMode">
+      <div class="col-md-2">
+        {{comicstype.name}}
+      </div>
+      <div class="col-md-6">
+        {{comicstype.url}}
+      </div>
+      <div class="col-md-4 text-right">
+        <button ng-click="item.edit(comicstype)" class="btn btn-default">Edit</button>
+        <button ng-click="self.delete(comicstype)" class="btn btn-default">Delete</button>
       </div>
     </div>
-    <div class="col-md-12">
-      <form>
-        <label for="name">Name</label>
-        <input id="name" type="text" ng-model="self.newComicstype.name"></input><br />
-        <label for="url">URL</label>
-        <input id="url" type="text" ng-model="self.newComicstype.url"></input><br />
-        <button ng-click="self.save(self.newComicstype)">Add</button>
-      </form>
+
+    <div ng-if="item.isInEditMode">
+      <div class="col-md-2">
+        <input id="name" type="text" ng-model="comicstype.name" class="form-control"></input>
+      </div>
+      <div class="col-md-6">
+        <input id="name" type="text" ng-model="comicstype.url" class="form-control"></input>
+      </div>
+      <div class="col-md-4 text-right">
+        <button ng-click="item.update(comicstype)" class="btn btn-default">Update</button>
+      </div>
     </div>
+
   </div>
-
-
 </div>
+
+<hr class="divider" />
+
+<form>
+  <h4>Add a new source</h4>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input id="name" type="text" ng-model="self.newComicstype.name" class="form-control"></input>
+  </div>
+  <div class="form-group">
+    <label for="url">URL</label>
+    <input id="url" type="text" ng-model="self.newComicstype.url" class="form-control"></input>
+    <p class="help-block">Example: https://garfield.com/uploads/strips/%YYYY-%MM-%DD.jpg</p>
+  </div>
+  <button ng-click="self.save(self.newComicstype)" class="btn btn-default">Add</button>
+</form>
