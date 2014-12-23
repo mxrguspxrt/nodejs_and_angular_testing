@@ -1,12 +1,12 @@
 Installation steps
 ------------------
 
-Visit http://nodejs.org/ and install NodeJS
-Visit http://www.mongodb.org/, install MongoDB and run it
+* Visit http://nodejs.org/ and install NodeJS
+* Visit http://www.mongodb.org/, install MongoDB and run it
 
-git clone git@github.com:mxrguspxrt/nodejs_and_angular_testing.git
-cd nodejs_and_angular_testing
-cd api && npm install
+* git clone git@github.com:mxrguspxrt/nodejs_and_angular_testing.git
+* cd nodejs_and_angular_testing
+* cd api && npm install
 
 
 Testing
