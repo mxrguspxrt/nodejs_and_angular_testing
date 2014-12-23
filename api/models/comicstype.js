@@ -32,8 +32,6 @@ ComicstypeSchema.methods.getComicsimage = function(ymd) {
           replace("%MM", ymd[1]).
           replace("%DD", ymd[2]);
 
-        console.log("File not found, loading from: " + imagePath);
-
         var onImageStoredInGfs = function(file) {
           console.log("File stored");
           var comicsimage = new Comicsimage({
@@ -66,7 +64,9 @@ ComicstypeSchema.methods.getComicsimage = function(ymd) {
           }
         }
 
+        console.log("File not found, loading from: " + imagePath);
         http.get(imagePath, onFileDownloaded).on("error", function(error) {
+          console.log("Load failed from: " + imagePath, error);
           reject(error);
         });
       }
