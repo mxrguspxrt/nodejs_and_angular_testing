@@ -7,8 +7,18 @@ Visit http://www.mongodb.org/, install MongoDB and run it
 git clone git@github.com:mxrguspxrt/nodejs_and_angular_testing.git
 cd nodejs_and_angular_testing
 cd api && npm install
-DEBUG=api ./bin/www # RUN APP
 
+
+Testing
+-------
+
+npm test
+
+
+Running server
+--------------
+
+ntpm start # to run server
 
 
 
@@ -36,4 +46,4 @@ Time spent
 * 18.12 - 6h
 * 19.12 - 6h
 * 21.12 - 6h
-* 23.12 - 6h
+* 23.12 - 8h
