@@ -18,13 +18,13 @@ npm test
 Running server
 --------------
 
-ntpm start # to run server
+ntpm start
 
 
 Known problems
 --------------
 
-* Most of the tests are missing (wrote few REST tests for starters)
+* Most of the tests are missing (wrote few REST API tests for starters)
 * There should be different environment setups (production, test etc) - at the moment running tests will clear database
 
 
