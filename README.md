@@ -24,6 +24,7 @@ npm start
 Known problems
 --------------
 
+* Validations and error managment is missing
 * Most of the tests are missing (wrote few REST API tests for starters)
 * There should be different environment setups (production, test etc) - at the moment running tests will clear database
 
